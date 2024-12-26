@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundColor: {
+        skin: {
+          base: "var(--color-bg)",
+          // You can add more custom colors here
+        },
+      },
     },
   },
   plugins: [],
