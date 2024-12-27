@@ -106,6 +106,9 @@
 .heroBackground svg {
   width: max(2560px, 100vw);
   height: auto;
+  vertical-align: middle;
+  display: block;
+  overflow: visible;
 }
 
 .heroMain {

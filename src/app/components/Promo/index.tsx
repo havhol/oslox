@@ -1,7 +1,9 @@
 "use client";
+import { LightningBoltIcon } from "@radix-ui/react-icons";
 import {
   Badge,
   Box,
+  Button,
   Card,
   Code,
   Flex,
@@ -9,10 +11,11 @@ import {
   Section,
   Text,
 } from "@radix-ui/themes";
-import { RocketIcon, LightningBoltIcon } from "@radix-ui/react-icons";
-// import BackgroundHero from "./components/HeroBackground";
-import styles from "./Promo.module.scss";
 import BackgroundSvg from "../BackgroundSvg";
+import styles from "./Promo.module.scss";
+import TeamManagement from "../Cards/TeamManagement";
+import NotificationSettings from "../Cards/NotificationSettings";
+import FinancialPerformance from "../Cards/FinancialPerformance";
 
 const Promo = () => {
   return (
@@ -39,14 +42,14 @@ const Promo = () => {
                 <Flex>
                   <Badge color="indigo" size="3" mb="2">
                     <LightningBoltIcon />
-                    OsloX
+                    Appmakers & Beerdrinkers
                   </Badge>
                 </Flex>
                 <Box mb="5">
                   <Heading weight="medium" size="9">
                     Grünerløkka tech collective {""}
                     <Text as="span" size="9" color="indigo">
-                      building really nice apps for the finance market
+                      building really nice apps.
                     </Text>
                   </Heading>
                 </Box>
@@ -59,8 +62,7 @@ const Promo = () => {
                 </Text>
               </Box>
               <Box mb="5">
-                {/* <Card size="2">
-                    <>
+                <Card size="2">
                   <div className={styles.highlightLine1}>
                     <Code>
                       <span className={styles.module}>import </span>
@@ -71,6 +73,45 @@ const Promo = () => {
                     </Code>
                   </div>
                   <div className={styles.highlightLine2}>
+                    <Code>
+                      <span className={styles.module}>import </span>
+                      <span className={styles.foo}>{"{"}</span>
+                      <span className={styles.foo}>Theme</span>
+                      {""}
+                      <span className={styles.foo}>,</span>
+                      {""}
+                      <span className={styles.foo}>Workhorse</span>
+                      {""}
+                      <span className={styles.foo}>{"}"}</span>
+                      {""}
+                      <span className={styles.string}>
+                        &quot;@oslox/workforce&quot;
+                      </span>
+                      <span className={styles.punctuation}>;</span>
+                    </Code>
+                  </div>
+                  <div className={styles.highlightLine3}>
+                    <Code>
+                      <span className={styles.module}>export default </span>
+                      <span className={styles.foo}>{"()"}</span>
+                      <span className={styles.foo}>{"=>"}</span>
+                      <span className={styles.foo}>{"("}</span>
+                    </Code>
+                  </div>
+                  <div className={styles.highlightLine3}>
+                    <Code>
+                      <span className={styles.module}>{"<Theme>"}</span>
+                    </Code>
+                  </div>
+                  <div className={styles.highlightLine3}>
+                    <Code>
+                      <span className={styles.module}>
+                        {"<Workhorse>Hey, let`s build 👋</Workhorse>"}
+                      </span>
+                    </Code>
+                  </div>
+
+                  {/* <div className={styles.highlightLine2}>
                     <span className={styles.module}>import </span>
                     <span className="token imports">
                         <span className="token punctuation">{</span> 
@@ -82,11 +123,15 @@ const Promo = () => {
                     <span className="module">from</span> 
                     <span className="token string">"@radix-ui/themes"</span>
                     <span className="token punctuation">;</span>
-                    </div>
-                    </>
-
-                </Card> */}
+                    </div> */}
+                </Card>
               </Box>
+              <Flex gap="5">
+                <Button size="4">Get in touch</Button>
+                <Button size="4" variant="soft">
+                  Playground
+                </Button>
+              </Flex>
             </Section>
           </Box>
         </div>
@@ -96,12 +141,12 @@ const Promo = () => {
               <div className={styles.heroShowcaseInnerScaled}>
                 <Flex gap="6">
                   <Flex gap="6" direction="column">
-                    <Card>something</Card>
-                    <Card>something</Card>
-                    <Card>something</Card>
+                    <TeamManagement />
+                    <NotificationSettings />
+                    <TeamManagement />
                   </Flex>
                   <Flex gap="6" direction="column">
-                    <Card>asomething</Card>
+                    <FinancialPerformance />
                     <Card>asomething</Card>
                     <Card>asomething</Card>
                   </Flex>

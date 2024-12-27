@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer"; // Example footer component
 
 export const metadata = {
-  title: "oslox",
-  description: "Curated stock insights and live market data",
+  title: "OsloX",
+  description: "Appmakers & Beerdrinkers",
 };
 
 export default function RootLayout({
