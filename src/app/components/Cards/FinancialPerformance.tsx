@@ -1,33 +1,31 @@
-import React from "react";
 import {
+  Badge,
+  Box,
+  Button,
   Card,
+  Flex,
+  Grid,
   Heading,
   Text,
-  Flex,
-  Box,
-  Separator,
-  Badge,
-  Button,
-  Grid,
 } from "@radix-ui/themes"; // Replace with your actual imports
 
 const FinancialPerformance = () => {
   const metrics = [
-    { label: "MRR", value: "$350K", change: "3.2%", accent: "teal" },
-    { label: "OpEx", value: "$211K", change: "12.8%", accent: "red" },
-    { label: "CapEx", value: "$94K", change: "8.8%", accent: "teal" },
-    { label: "GPM", value: "44.6%", change: "1.2%", accent: "red" },
-    { label: "NPM", value: "9.1%", change: "0.0%", accent: "gray" },
-    { label: "EBITDA", value: "$443K", change: "4.1%", accent: "teal" },
+    { label: "SCATC", value: "$350K", change: "3.2%", accent: "teal" },
+    { label: "NAVA", value: "$211K", change: "12.8%", accent: "red" },
+    { label: "PHO", value: "$94K", change: "8.8%", accent: "teal" },
+    { label: "TOT", value: "44.6%", change: "1.2%", accent: "red" },
+    { label: "YTD", value: "9.1%", change: "0.0%", accent: "gray" },
+    { label: "RESULT", value: "$443K", change: "4.1%", accent: "teal" },
     { label: "CAC", value: "$146", change: "11.0%", accent: "teal" },
     { label: "LTV", value: "$1,849", change: "3%", accent: "teal" },
     { label: "Churn", value: "12.4%", change: "1.1%", accent: "red" },
   ];
 
   return (
-    <Card size="4" variant="surface">
-      <Flex justify="space-between" align="center" className="rt-r-mb-2">
-        <Heading size="6">Financial performance</Heading>
+    <Card size="4" variant="surface" style={{ width: "500px" }}>
+      <Flex justify="between" align="center" mb="2">
+        <Heading size="6">Trading performance</Heading>
         <Flex gap="2">
           <Button variant="ghost" size="2" highContrast>
             {/* Icon for the first button */}
@@ -63,7 +61,7 @@ const FinancialPerformance = () => {
           </Button>
         </Flex>
       </Flex>
-      <Text size="2" color="gray" className="rt-r-mb-6">
+      <Text as="div" size="2" color="gray" mb="6">
         Review your company’s KPIs compared to the month before.
       </Text>
       <Grid columns="3" gap="5">
@@ -77,7 +75,7 @@ const FinancialPerformance = () => {
                 {metric.change}
               </Badge>
             </Flex>
-            <Text size="8" weight="bold" className="rt-r-mb-2">
+            <Text size="7" weight="bold" className="rt-r-mb-2">
               {metric.value}
             </Text>
           </Box>

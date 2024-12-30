@@ -1,0 +1,44 @@
+.articleRoot {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  --themes-hero-padding: var(--space-5);
+  --themes-hero-showcase-scale: calc(10 / 16);
+  --themes-hero-showcase-base-width: 1760px;
+}
+
+.articleContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.heroBackground svg {
+  width: max(2560px, 100vw);
+  height: auto;
+  vertical-align: middle;
+  display: block;
+  overflow: visible;
+}
+
+.articleMain {
+  position: relative;
+  box-sizing: initial;
+  margin-top: var(--header-height);
+  padding-left: var(--themes-hero-padding);
+  padding-right: var(--themes-hero-padding);
+  width: 700px;
+  //   background-color: white;
+  //   border-radius: 8px;
+}

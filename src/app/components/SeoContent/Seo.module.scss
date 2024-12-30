@@ -1,0 +1,12 @@
+.visuallyHidden {
+  position: absolute; /* Remove from the normal document flow */
+  width: 1px; /* Minimal size */
+  height: 1px; /* Minimal size */
+  margin: -1px; /* Negative margin removes extra space */
+  padding: 0; /* Remove padding */
+  border: 0; /* Remove border */
+  overflow: hidden; /* Hide content visually */
+  clip: rect(0, 0, 0, 0); /* Clip the element */
+  white-space: nowrap; /* Prevent text wrapping */
+  clip-path: inset(50%); /* Hide element from all sides */
+}

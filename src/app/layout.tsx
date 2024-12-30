@@ -1,7 +1,7 @@
-import { Theme } from "@radix-ui/themes";
-import "./globals.css";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer"; // Example footer component
+import { Theme } from "@radix-ui/themes";
+import SeoContent from "./components/SeoContent";
+import "./globals.css";
 
 export const metadata = {
   title: "OsloX",
@@ -17,9 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[var(--primary-bg)] text-[var(--primary-text)]">
         <Theme>
+          <SeoContent />
           <Header />
           {children}
-          {/* <Footer /> */}
         </Theme>
       </body>
     </html>

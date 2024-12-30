@@ -1,0 +1,10 @@
+.root {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.pathPrimary {
+  //   fill: var(--bg-color, black); // Default fill color can be overridden
+  fill: var(--logo-color);
+}

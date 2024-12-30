@@ -1,0 +1,47 @@
+.codeBlockRoot {
+  --code-block-radius: var(--radius-4);
+  position: relative;
+  box-sizing: border-box;
+  //   background-color: var(--bg-color);
+  border-radius: var(--code-block-radius);
+
+  code {
+    background-color: inherit;
+  }
+}
+
+.codeBlockContent {
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  display: block;
+  //   background-color: var(--bg-color);
+}
+
+.codeBlockPre {
+  --letter-spacing: var(--letter-spacing-2);
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--code-font-family);
+  font-size: calc(var(--font-size-2) * var(--code-font-size-adjust));
+  line-height: 22px;
+  white-space: pre;
+}
+
+.pinkish {
+  color: var(--crimson-11);
+}
+
+.purpleish {
+  color: var(--violet-11);
+}
+
+.blueish {
+  color: var(--accent-11);
+}
+
+.string {
+  color: var(--gray-12);
+}

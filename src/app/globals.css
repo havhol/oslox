@@ -10,6 +10,9 @@ html.light {
   --tickrpal-border: var(--gray-6); /* Border color */
   background-color: var(--bg-color);
   color: var(--text-color);
+  --solid-button: #000;
+  --solid-button-text:#fff;
+  --logo-color: rgba(0,0,0,1);
 }
 
 /* Dark Theme */
@@ -21,8 +24,15 @@ html.dark {
   --tickrpal-border: var(--gray-6); /* Dark border color */
   background-color: var(--bg-color);
   color: var(--text-color);
+  --solid-button: #fff;
+  --solid-button-text:#000;
+  --logo-color: rgba(255,255,255,1);
 }
 
+
+:root {
+  --header-height: 48px;
+}
 /* Smooth transitions */
 body {
   transition: background-color 0.3s ease, color 0.3s ease;

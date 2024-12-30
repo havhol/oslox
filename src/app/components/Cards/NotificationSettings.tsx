@@ -37,10 +37,10 @@ const NotificationSettings = () => {
   return (
     <Card size="4" variant="surface">
       <Heading size="6" className="rt-r-lt-start rt-r-mb-2">
-        Notifications
+        Tickrpal Notify
       </Heading>
-      <Text size="2" accent="gray" className="rt-r-mb-6">
-        Manage your notification settings.
+      <Text size="2" color="gray" className="rt-r-mb-6">
+        Manage your Tickrpal notification settings.
       </Text>
 
       <Box>

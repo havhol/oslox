@@ -1,23 +1,40 @@
 "use client";
-import { LightningBoltIcon } from "@radix-ui/react-icons";
+
+import { CheckIcon, CopyIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import {
-  Badge,
+  AlertDialog,
   Box,
   Button,
-  Card,
-  Code,
+  Callout,
   Flex,
   Heading,
+  IconButton,
   Section,
   Text,
 } from "@radix-ui/themes";
+import Link from "next/link";
 import BackgroundSvg from "../BackgroundSvg";
-import styles from "./Promo.module.scss";
-import TeamManagement from "../Cards/TeamManagement";
-import NotificationSettings from "../Cards/NotificationSettings";
+import CompanyCard from "../Cards/Company";
 import FinancialPerformance from "../Cards/FinancialPerformance";
+import InvoicePaidCard from "../Cards/Invoice";
+import NotificationSettings from "../Cards/NotificationSettings";
+import RecentActivityCard from "../Cards/RecentActivity";
+import SignUpCard from "../Cards/Signup";
+import TeamManagement from "../Cards/TeamManagement";
+import Codeblock from "../Codeblock";
+import styles from "./Promo.module.scss";
+import { useState } from "react";
 
 const Promo = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("hello@oslox.io").then(() => {
+      setIsCopied(true);
+      // setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+    });
+  };
+
   return (
     <div className={styles.heroRoot}>
       <div className={styles.heroContent}>
@@ -25,7 +42,7 @@ const Promo = () => {
         <div className={styles.heroBackground}>
           <BackgroundSvg />
         </div>
-        <div className={styles.heroMain}>
+        <Box className={styles.heroMain}>
           <Box>
             <Section
               size={{
@@ -39,102 +56,77 @@ const Promo = () => {
               }}
             >
               <Box>
-                <Flex>
-                  <Badge color="indigo" size="3" mb="2">
-                    <LightningBoltIcon />
-                    Appmakers & Beerdrinkers
-                  </Badge>
-                </Flex>
                 <Box mb="5">
-                  <Heading weight="medium" size="9">
-                    Grünerløkka tech collective {""}
-                    <Text as="span" size="9" color="indigo">
-                      building really nice apps.
-                    </Text>
+                  <Heading weight="medium" size={{ initial: "8", md: "9" }}>
+                    Grünerløkka tech collective developing really nice apps.
                   </Heading>
                 </Box>
               </Box>
               <Box style={{ maxWidth: "500px" }} mb="5">
-                <Text mb="5" size="5">
-                  An open source component library optimized for fast
-                  development, easy maintenance, and accessibility. Just import
-                  and go—no configuration required.
+                <Text mb="5" size={{ initial: "3", md: "5" }}>
+                  OsloX creates modern tools for the finance market, combining
+                  innovation and simplicity. Our latest app, Tickrpal, turns
+                  market data into actionable insights—easy, fast, and
+                  intuitive.
                 </Text>
               </Box>
               <Box mb="5">
-                <Card size="2">
-                  <div className={styles.highlightLine1}>
-                    <Code>
-                      <span className={styles.module}>import </span>
-                      <span className={styles.string}>
-                        &quot;@oslox.css&quot;
-                      </span>
-                      <span className={styles.punctuation}>;</span>
-                    </Code>
-                  </div>
-                  <div className={styles.highlightLine2}>
-                    <Code>
-                      <span className={styles.module}>import </span>
-                      <span className={styles.foo}>{"{"}</span>
-                      <span className={styles.foo}>Theme</span>
-                      {""}
-                      <span className={styles.foo}>,</span>
-                      {""}
-                      <span className={styles.foo}>Workhorse</span>
-                      {""}
-                      <span className={styles.foo}>{"}"}</span>
-                      {""}
-                      <span className={styles.string}>
-                        &quot;@oslox/workforce&quot;
-                      </span>
-                      <span className={styles.punctuation}>;</span>
-                    </Code>
-                  </div>
-                  <div className={styles.highlightLine3}>
-                    <Code>
-                      <span className={styles.module}>export default </span>
-                      <span className={styles.foo}>{"()"}</span>
-                      <span className={styles.foo}>{"=>"}</span>
-                      <span className={styles.foo}>{"("}</span>
-                    </Code>
-                  </div>
-                  <div className={styles.highlightLine3}>
-                    <Code>
-                      <span className={styles.module}>{"<Theme>"}</span>
-                    </Code>
-                  </div>
-                  <div className={styles.highlightLine3}>
-                    <Code>
-                      <span className={styles.module}>
-                        {"<Workhorse>Hey, let`s build 👋</Workhorse>"}
-                      </span>
-                    </Code>
-                  </div>
-
-                  {/* <div className={styles.highlightLine2}>
-                    <span className={styles.module}>import </span>
-                    <span className="token imports">
-                        <span className="token punctuation">{</span> 
-                        <span className="token maybe-class-name">Theme</span>
-                        <span className="token punctuation">,</span> 
-                        <span className="token maybe-class-name">Button</span> 
-                        <span className="token punctuation">}</span>
-                    </span> 
-                    <span className="module">from</span> 
-                    <span className="token string">"@radix-ui/themes"</span>
-                    <span className="token punctuation">;</span>
-                    </div> */}
-                </Card>
+                <Codeblock />
               </Box>
               <Flex gap="5">
-                <Button size="4">Get in touch</Button>
-                <Button size="4" variant="soft">
-                  Playground
+                <AlertDialog.Root>
+                  <AlertDialog.Trigger>
+                    <Button
+                      size={{ initial: "3", sm: "4" }}
+                      className={styles.solidButton}
+                    >
+                      Get in touch
+                    </Button>
+                  </AlertDialog.Trigger>
+                  <AlertDialog.Content maxWidth="450px">
+                    <AlertDialog.Title>Get in touch</AlertDialog.Title>
+                    <Callout.Root className={styles.calloutRoot}>
+                      <Flex
+                        gap="12"
+                        align="center"
+                        justify="between"
+                        width="100%"
+                      >
+                        <Flex>
+                          <Callout.Icon style={{ marginRight: "12px" }}>
+                            <InfoCircledIcon />
+                          </Callout.Icon>
+                          <Callout.Text>hello@oslox.io</Callout.Text>
+                        </Flex>
+                        <IconButton
+                          onClick={handleCopy}
+                          aria-label="Copy email"
+                        >
+                          {isCopied ? <CheckIcon /> : <CopyIcon />}
+                        </IconButton>
+                      </Flex>
+                    </Callout.Root>
+                    <Flex gap="3" mt="4" justify="end">
+                      <AlertDialog.Cancel>
+                        <Button variant="soft" color="gray">
+                          Got it
+                        </Button>
+                      </AlertDialog.Cancel>
+                    </Flex>
+                  </AlertDialog.Content>
+                </AlertDialog.Root>
+                <Button
+                  size={{ initial: "3", sm: "4" }}
+                  variant="surface"
+                  highContrast
+                  asChild
+                >
+                  <Link href="/stories">Read our story</Link>
                 </Button>
               </Flex>
             </Section>
           </Box>
-        </div>
+        </Box>
         <div className={styles.heroShowcase}>
           <div className={styles.heroShowcaseInner}>
             <div>
@@ -143,17 +135,15 @@ const Promo = () => {
                   <Flex gap="6" direction="column">
                     <TeamManagement />
                     <NotificationSettings />
-                    <TeamManagement />
                   </Flex>
                   <Flex gap="6" direction="column">
                     <FinancialPerformance />
-                    <Card>asomething</Card>
-                    <Card>asomething</Card>
+                    <RecentActivityCard />
+                    <SignUpCard />
                   </Flex>
                   <Flex gap="6" direction="column">
-                    <Card>bsomething</Card>
-                    <Card>bsomething</Card>
-                    <Card>bsomething</Card>
+                    <InvoicePaidCard />
+                    <CompanyCard />
                   </Flex>
                 </Flex>
               </div>

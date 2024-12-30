@@ -16,11 +16,11 @@ import {
 const TeamManagement = () => {
   return (
     <Card size="4" variant="surface" className="rt-r-size-4">
-      <Heading size="6" className="rt-r-lt-start rt-r-mb-2">
-        Your team
+      <Heading size="6" mb="2">
+        Tickrpal mates
       </Heading>
-      <Text size="2" accent="gray" className="rt-r-mb-5">
-        Invite and manage your team members.
+      <Text as="div" size="2" color="gray" mb="5">
+        Invite and manage your trading team.
       </Text>
 
       <Flex gap="3" className="rt-r-mb-5">
@@ -40,45 +40,46 @@ const TeamManagement = () => {
       <Flex direction="column">
         {[
           {
-            name: "Emmeline Labrie",
-            email: "emmeline.labrie@example.com",
+            name: "Line Labrie",
+            email: "line.labrie@example.com",
             img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?&w=64&h=64&dpr=2&q=70&crop=faces&fit=crop",
           },
           {
-            name: "Zac Wight",
-            email: "zac.wight@example.com",
+            name: "Zac Viig",
+            email: "zac.viig@example.com",
             img: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?&w=64&h=64&dpr=2&q=70&crop=faces&fit=crop",
           },
           {
-            name: "Poppy Nicholls",
-            email: "poppy.nicholls@example.com",
+            name: "Kristine Nihol",
+            email: "kristine.nihol@example.com",
             img: "https://images.unsplash.com/photo-1526510747491-58f928ec870f?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.48&fp-y=0.48&fp-z=1.3&fit=crop",
           },
           {
-            name: "Da-Xia Wu",
-            email: "da-xia.wu@example.com",
+            name: "Dani Vu",
+            email: "dani.vu@example.com",
             img: "https://images.unsplash.com/photo-1541823709867-1b206113eafd?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1.5&fit=crop",
           },
           {
-            name: "Marisa Palermo",
-            email: "marisa.palermo@example.com",
+            name: "Marie Pale",
+            email: "marie.pale@example.com",
             img: "https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.48&fp-y=0.35&fp-z=2&fit=crop",
           },
         ].map((member, index) => (
           <Box key={index}>
             <Flex align="center" gap="4">
-              <Flex align="center" gap="3" style={{ "--width": "200px" }}>
+              <Flex align="center" gap="3" style={{ width: "200px" }}>
                 <Avatar
                   size="3"
                   variant="soft"
                   src={member.img}
                   alt={member.name}
+                  fallback="T"
                 />
                 <Link href="#" className="rt-r-tw-nowrap rt-underline-auto">
                   {member.name}
                 </Link>
               </Flex>
-              <Text size="2" accent="gray">
+              <Text size="2" color="gray">
                 {member.email}
               </Text>
               <Flex justify="end" className="rt-r-fg-1">
